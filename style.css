@@ -1,0 +1,95 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+}
+
+.container {
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    min-width: 450px;
+    position: fixed;
+    min-height: 100px;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+    color:  #000;
+}
+
+h1 { 
+    text-transform: uppercase;
+    padding-top: 16px;
+}
+
+.header {
+    padding: 16px;
+}
+
+.noteInput {
+    border: 1px solid #000;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#newTask {
+    background-color: #000;
+    color:  #fff;
+    border-radius: 3px;
+    padding: 8px;
+    border: 1px solid #000;
+    width: 20%;
+}
+
+#newTask:hover {
+    background-color: #ccc;
+    color: #000;
+    border: 1px solid #ccc;
+    cursor: pointer;
+
+}
+
+.task {
+    background-color: #000;
+    font: size 64px;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+    display:flex;
+}
+
+
+
+.task p {
+    width: 80%;
+    padding: 8px;
+}
+
+.check {
+    width: 20%;
+    background-color: #fff;
+    padding: 8px;
+    width: 40px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.check:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.check i {
+    color: #000;
+}
+
+
+

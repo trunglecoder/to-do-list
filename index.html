@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.15.4-web/css/all.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To do list</h1>
+        <div class="header">
+            <input class="noteInput" type="text" placeholder="Nhập ghi chú tại đây">
+            <button id="newTask">Add</button>
+        </div>
+        <ul id="tasks"></ul>
+    </div>
+
+    <script>
+        var newTask = document.querySelector('#newTask');
+        var inputTask = document.querySelector('.noteInput');
+        var tasks = document.querySelector('#tasks')
+        
+        //Enter => click on:
+        inputTask.addEventListener('keyup', function (event) {
+            event.preventDefault()
+            if (event.keyCode === 13) {
+                newTask.click();
+            }
+        })
+
+        //onclick newTask:
+        newTask.addEventListener('click', function () {
+            // Create a new task:
+            if (inputTask.value.length === 0) {
+                alert('Please enter')
+            } else { 
+                tasks.innerHTML += `
+                    <div class="task" >
+                        <p>${inputTask.value}</p>
+                        <button class="check">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </div>
+                `
+                inputTask.value = ''
+            }
+
+
+            //remove a task:
+            var currentIndex = document.querySelectorAll('.check')
+            
+            for(var i = 0; i <= currentIndex.length; ++i) {
+                currentIndex[i].onclick = function () {
+                    this.parentNode.remove()
+                }
+            }
+        })
+
+        
+    </script>
+</body>
+</html>
